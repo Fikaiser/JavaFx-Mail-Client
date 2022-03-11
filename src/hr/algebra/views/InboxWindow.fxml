@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controllers.InboxWindowController">
+   <children>
+      <GridPane layoutX="6.0" prefHeight="800.0" prefWidth="1394.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="740.0" minWidth="10.0" prefWidth="319.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1180.0" minWidth="10.0" prefWidth="1075.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="328.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="436.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="648.0" minHeight="10.0" prefHeight="646.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+             
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="10.0" prefWidth="62.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="1003.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="From:" />
+                  <Label text="To:" GridPane.rowIndex="1" />
+                  <Label text="Subject:" GridPane.rowIndex="2" />
+                  <TextField fx:id="tfFrom" editable="false" GridPane.columnIndex="1" />
+                  <TextField fx:id="tfTo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfSubject" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </GridPane>
+            <TextArea fx:id="taContent" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ListView fx:id="lvEmails" prefHeight="200.0" prefWidth="319.0" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+            <MenuBar GridPane.columnSpan="2" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <menus>
+    <Menu mnemonicParsing="false" text="Mailbox">
+         <items>
+            <MenuItem fx:id="btnInbox" mnemonicParsing="false" onAction="#setInboxActive" text="Inbox" />
+            <MenuItem fx:id="btnOutbox" mnemonicParsing="false" onAction="#setOutboxActive" text="Outbox" />
+         </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Mail">
+         <items>
+            <MenuItem fx:id="btnComposeNew" mnemonicParsing="false" onAction="#openNewEmailWindow" text="Compose new mail" />
+         </items>
+    </Menu>
+      <Menu mnemonicParsing="false" text="Application">
+         <items>
+            <MenuItem fx:id="btnExit" mnemonicParsing="false" onAction="#ExitApp" text="Exit" />
+                        <MenuItem fx:id="btnDocs" mnemonicParsing="false" onAction="#WriteDocumentation" text="Write Documentation" />
+         </items>
+      </Menu>
+                  <Menu mnemonicParsing="false" text="Mailing Lists">
+                    <items>
+                      <MenuItem fx:id="btnMailingListOverview" mnemonicParsing="false" onAction="#openMailingListWindow" text="Overview" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Chat">
+                     <items>
+                        <MenuItem fx:id="btnOpenChatWindow" mnemonicParsing="false" onAction="#openChatWindow" text="Open chat" />
+                     </items>
+                  </Menu>
+  </menus>
+</MenuBar>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
